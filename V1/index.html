@@ -104,7 +104,7 @@
     .education article { container-type:inline-size; }
     .education article p { font-size:.8rem; }
     .major-label { display:block; color:var(--accent); font-size:.75rem; margin-bottom:4px; }
-    .major-name { display:block; white-space:normal; word-break:break-word; font-size:max(14px, .72rem); }
+    .major-name { display:block; white-space:normal; word-break:break-word; overflow-wrap:break-word; font-size:max(14px, .72rem); }
     @supports (font-size:1cqi) { .major-name { font-size:clamp(14px, 4cqi, 1rem); } }
     .interest-icons { display:flex; flex-wrap:wrap; gap:15px; margin-top:22px; }
     .interest-icons svg { width:42px; height:42px; padding:6px; color:var(--accent); border:1px solid var(--line); background:rgba(112,244,238,.06); filter:drop-shadow(0 0 5px rgba(112,244,238,.25)); }
@@ -132,11 +132,17 @@
       .contact .section-art { position:static; transform:none; width:90px; margin-top:24px; }
     }
     @media (max-width:480px) {
-      body { font-size:max(14px, 1rem); }
+      body { font-size:14px !important; }
       nav a, .eyebrow, .hero-link, .hero-aside p, .side-label,
       .date, .supervisor, .project h4, summary, footer,
       .education article p, .major-label { font-size:14px; }
       .publication { font-size:14px !important; }
+      .major-name, #about .major-name {
+        font-size:14px !important;
+        white-space:normal !important;
+        word-break:break-word !important;
+        overflow-wrap:break-word !important;
+      }
     }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
